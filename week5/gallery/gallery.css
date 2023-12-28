@@ -1,0 +1,64 @@
+body {
+  background: rgba(255, 192, 203, 0.5);
+  font-family: "Lobster", sans-serif;
+} /* Добавила новый шрифт из гугл */
+nav {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-around;
+  background: rgb(214, 225, 214);
+  height: 10vh;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 67px;
+}
+nav a {
+  text-decoration: none;
+  color: rgb(159, 11, 127);
+}
+nav a:hover {
+  /* действия с навигационным меню */
+  color: rgb(13, 13, 111);
+}
+nav a:active {
+  color: rgb(226, 97, 211);
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+main h1 {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  /* линейный градиент, слева на право, 3 цвета */
+  background-image: linear-gradient(
+    to right,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  /* обрезаем фон по тексту */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* меняет цвет текста заголовка на прозрачный что бы можно было увидеть градиент*/
+  -webkit-text-fill-color: transparent;
+}
+h1 #name::first-letter {
+  /* Буква не покрасилась, почему? */
+  color: rgb(163, 78, 241);
+}
+main .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: flex-start;
+}
+.gallery img {
+  width: 100px;
+  margin: 10px;
+}
+.gallery img:hover {
+  /* При нажатии картинки становятся больше.  */
+  flex-grow: 1;
+}
