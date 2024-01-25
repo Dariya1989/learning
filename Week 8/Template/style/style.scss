@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Poppins:wght@400;500&display=swap");
+
+$font: "Poppins", sans-serif;
+$fontlogo: "Istok Web", sans-serif;
+
+@mixin text($color, $height) {
+  font-family: $font;
+  font-size: 16.67px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: $color;
+  line-height: $height;
+}
+h1 {
+  color: #455a64;
+  font-size: 42px;
+  font-family: $font;
+  font-weight: 700;
+  line-height: 52.92px;
+}
+h3 {
+  color: black;
+  font-size: 17.86px;
+  font-family: $font;
+  font-weight: 700;
+  line-height: 26.2px;
+}
+p {
+  @include text(#535359, 24.45px);
+}
+
+.header {
+  background-color: #ddfbdc;
+  font-family: $font;
+}
+aside {
+  background-color: #f7fff6;
+}
+
+.nav {
+  display: grid;
+  padding-top: 33px;
+  grid-template-columns: 9% 2fr 2fr 1fr 9%;
+  grid-template-areas: ". logotype menues button .";
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 9% 1fr 2fr 1fr 9%;
+  }
+}
+
+.logotype {
+  display: flex;
+  grid-area: logotype;
+  justify-content: center;
+  align-items: baseline;
+  .logotype__text {
+    font-family: $fontlogo;
+  }
+}
+.menu {
+  grid-area: menues;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+// Стилизация кнопок
+.btn {
+  grid-area: button;
+  font-size: 13.71px;
+  font-family: $font;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 118px;
+  padding: 0%;
+}
+.btn_transparent {
+  background-color: #ddfbdc;
+  border: 3px #456a76 solid;
+}
+.btn_dark {
+  background-color: rgba(69, 106, 118, 1);
+  color: rgba(243, 252, 255, 1);
+  width: 130px;
+  height: 34px;
+}
+.btn_nonedekoration {
+  border: none;
+  background-color: #ddfbdc;
+}
+.btn:hover {
+  border: 3px rgb(10, 66, 10) solid;
+}
+
+.menu__item {
+  text-decoration: none;
+  color: black;
+  font-size: 13.71px;
+  font-weight: 700;
+}
+
+// Основная часть хедера с текстом
+.mainpage {
+  display: grid;
+  grid-template-columns: 16% 2fr 2fr 9%;
+  grid-template-areas: ". text photo .";
+  background-image: url(/pictures/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.mainpage-text {
+  display: flex;
+  grid-area: text;
+  flex-direction: column;
+  justify-content: center;
+  .mainpage-text__title {
+    color: #455a64;
+    font-size: 42px;
+    font-family: $font;
+    font-weight: 700;
+    line-height: 52.92px;
+  }
+
+  .mainpage-text__payment-info {
+    padding: 19px 0px;
+    color: #455a64;
+    font-size: 12.46px;
+    font-family: $font;
+    font-weight: 700;
+    line-height: 18.28px;
+  }
+}
+.mainpage__photos {
+  grid-area: photo;
+}
+// Область с карточками
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 40px 0;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    gap: 30px 0;
+    align-items: center;
+  }
+}
+.card {
+  width: 277px;
+  min-height: 290px;
+  background-color: rgba(221, 251, 220, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  .card__body {
+    text-align: center;
+  }
+}
+.card__img_back {
+  width: 76px;
+  height: 76px;
+  border-radius: 12px;
+  background-color: #456a76;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article {
+  display: flex;
+  margin: 0 114px;
+  .article__women {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @media (max-width: 1023px) {
+      transform: rotate(90deg);
+    }
+  }
+  .article__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+  }
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
